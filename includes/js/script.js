@@ -219,24 +219,67 @@ The Confirm() operation
 The "document" Object
 ----------------------------------------------*/
 
+// (function(){
+//   /*
+//   var pElements = document.getElementsByTagName("p");
+//   for (var i = 0,len=pElements.length; i < len; i++) {
+//     alert(pElements[i]);
+// */
+// /*
+//   var pElement = document.getElementById("foo1");
+//   if(pElement === null)
+//     {
+//       alert(pElement);
+//     }
+// */
+//
+//
+//   //  Non - Live Nature of querySelectorAll
+//   var p1Element = document.querySelectorAll("p");
+//   alert(p1Element.length);
+//   var el = document.createElement("p");
+//   var content = document.createTextNode("<strong>This is the newly added String in the new P tag</strong>");
+//   document.body.appendChild(el);
+//   p1Element = document.querySelectorAll("p");
+//   alert(p1Element.length);
+//
+//   //   Live Nature of getElementsByTagName
+//   var p1Element = document.getElementsByTagName("p");
+//   alert(p1Element.length);
+//   var el = document.createElement("p");
+//   var content = document.createTextNode("<strong>This is the newly added String in the new P tag</strong>");
+//   document.body.appendChild(el);
+//   alert(p1Element.length);
+// }());
+
+
+
+/*----------------------------------------------
+Creating An Element and setting Attributes
+----------------------------------------------*/
+
 (function(){
-  /*
-  var pElements = document.getElementsByTagName("p");
-  for (var i = 0,len=pElements.length; i < len; i++) {
-    alert(pElements[i]);
-*/
-/*
-  var pElement = document.getElementById("foo1");
-  if(pElement === null)
-    {
-      alert(pElement);
-    }
-*/
+  var el=document.createElement("p");
+  var content=document.createTextNode("Add this text!");
+  el.appendChild(content);
+  el.id="bar";
+  el.setAttribute("Align","Center");
+  document.body.appendChild(el);
+}());
 
-  var p1Element = document.querySelectorAll("div p");
-  alert(p1Element.length);
 
-  var p1Element = document.querySelectorAll("#foo");
-  alert(p1Element.length);
 
+/*----------------------------------------------
+Targeting a specific location to insert new elemnent
+----------------------------------------------*/
+
+(function(){
+  var doc=document,
+  el=doc.createElement("p");
+  content=doc.createTextNode("This is new p tag inside Div Tag !"),
+  pFoo=doc.getElementById("foo");
+  el.appendChild(content);
+  el.id="bar";
+  // pFoo.parentNode.appendChild(el);
+  pFoo.parentNode.insertBefore(el,pFoo);
 }());
