@@ -12,9 +12,25 @@ Using innerHTML in place of createTextNode
 (function(){
   var doc=document,
   el=doc.getElementById("box");
+  left=el.offsetLeft;
+  moveBy= 3;
+  
+  function move(){
+    if(left > 399)
+    {  moveBox(moveBy);}
+    else {
+      moveBox = moveBox * (-1);
+      moveBox(moveBy);
+    }
+  }
+  var timer=setInterval(move,10);
 
-  function moveBox(moveBy){
-    var left=el.offsetLeft;
+
+
+
+
+  var moveBox =function(moveBy){
+
     el.style.left=left+moveBy+"px";
 
     if( ( (left > 399) && (moveBy > 0) )  ||  ( (moveBy < 0) && (left < 51) ) )
@@ -23,10 +39,5 @@ Using innerHTML in place of createTextNode
       timer=setInterval(move,10);
     }
   };
-  function move(){
-    var rand = 3;
-    rand*=-1;
-    return rand;
-  }
-  var timer=setInterval(move,10);
+
   }());
