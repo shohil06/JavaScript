@@ -258,28 +258,28 @@ The "document" Object
 Creating An Element and setting Attributes
 ----------------------------------------------*/
 
-(function(){
-  var el=document.createElement("p");
-  var content=document.createTextNode("Add this text!");
-  el.appendChild(content);
-  el.id="bar";
-  el.setAttribute("Align","Center");
-  document.body.appendChild(el);
-}());
+// (function(){
+//   var el=document.createElement("p");
+//   var content=document.createTextNode("Add this text!");
+//   el.appendChild(content);
+//   el.id="bar";
+//   el.setAttribute("Align","Center");
+//   document.body.appendChild(el);
+// }());
 
 
 
 /*----------------------------------------------
 Targeting a specific location to insert new elemnent
 ----------------------------------------------*/
-
-(function(){
-  var doc=document,
-  el=doc.createElement("p");
-  content=doc.createTextNode("This is new p tag inside Div Tag !"),
-  pFoo=doc.getElementById("foo");
-  el.appendChild(content);
-  el.id="bar";
-  // pFoo.parentNode.appendChild(el);
-  pFoo.parentNode.insertBefore(el,pFoo);
-}());
+//
+// (function(){
+//   var doc=document,
+//   el=doc.createElement("p");
+//   content=doc.createTextNode("This is new p tag inside Div Tag !"),
+//   pFoo=doc.getElementById("foo");
+//   el.appendChild(content);
+//   el.id="bar";
+//   // pFoo.parentNode.appendChild(el);
+//   pFoo.parentNode.insertBefore(el,pFoo);
+// }());
